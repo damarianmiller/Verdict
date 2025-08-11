@@ -1,0 +1,158 @@
+@import "./variables";
+@import "./button";
+@import "./text";
+@import "./input";
+@import url("https://fonts.googleapis.com/css2?family=Martian+Mono:wdth,wght@75..112.5,100..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+@media screen and (min-width: 0px) and (max-width: 325px) {
+	:root {
+		font-size: 12px;
+	}
+}
+@media screen and (min-width: 325px) and (max-width: 425px) {
+	:root {
+		font-size: 15px;
+	}
+}
+@media screen and (min-width: 425px) and (max-width: 525px) {
+	:root {
+		font-size: 16px;
+	}
+}
+@media screen and (min-width: 525px) and (max-width: 825px) {
+	:root {
+		font-size: 18px;
+	}
+}
+@media screen and (min-width: 825px) {
+	:root {
+		font-size: 20px;
+	}
+}
+:root {
+	--shadow-color: 210 10% 20%;
+}
+
+* {
+	width: auto;
+	height: auto;
+	padding: 0;
+	margin: 0;
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+
+	color: inherit;
+
+	background-color: transparent;
+
+	font-size: inherit;
+
+	text-decoration: none;
+
+	border-color: transparent;
+	border-style: none;
+	border-width: 0;
+
+	transition-property: all;
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+head,
+script,
+link,
+meta,
+style,
+title {
+	display: none;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+
+	color: #222;
+	font-family: "Noto Sans", sans-serif;
+
+	body {
+		flex-grow: 1;
+
+		.topbar,
+		.bottombar {
+			padding: map-get($space, "-3");
+			flex-direction: row;
+			flex-grow: 1;
+			width: 100%;
+		}
+		.topbar {
+			position: fixed;
+			top: 0;
+			justify-content: space-between;
+
+			background-color: #5a8bbc;
+
+			border-style: solid;
+			border-color: #333;
+
+			border-width: map-get($space, "-3");
+
+			.logo {
+				h1 {
+					font-size: map-get($space, "1");
+					letter-spacing: -1px;
+					text-shadow: map-get($shadow, "high");
+				}
+			}
+		}
+
+		.content {
+			padding: map-get($space, "0");
+
+			display: flex;
+			grid-template-rows: auto 1fr auto;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-areas:
+				"topbar topbar topbar"
+				"sidebar main sidebar";
+			gap: map-get($space, "-2");
+
+			background-color: #ffffff;
+
+			.sidebar {
+				grid-area: sidebar;
+			}
+		}
+		.bottombar {
+			position: fixed;
+			bottom: 0;
+
+			.nav {
+				width: max-content;
+				padding: map-get($space, "-2");
+
+				flex-direction: row;
+				gap: map-get($space, "-2");
+
+				background-color: #5a8bbc;
+
+				border-style: solid;
+				border-color: #333;
+				border-radius: $curve-radius;
+				border-width: map-get($space, "-3");
+
+				box-shadow: map-get($shadow, "high");
+			}
+		}
+	}
+
+	.header {
+		align-items: flex-start;
+		gap: map-get($space, "-1");
+
+		width: 100%;
+	}
+}

@@ -1,0 +1,65 @@
+:root {
+	--shadow-color: #666;
+	--shadow-color: 0deg 0% 45%;
+	--shadow-elevation-low: 0.3px 0.5px 0.4px hsl(var(--shadow-color) / 1),
+		0.4px 0.8px 0.7px -2.5px hsl(var(--shadow-color) / 0.69),
+		1.3px 2.5px 2.1px -5px hsl(var(--shadow-color) / 0.35);
+	--shadow-elevation-medium: 0.3px 0.5px 0.4px hsl(var(--shadow-color) / 0.88),
+		0.3px 0.7px 0.6px -1.2px hsl(var(--shadow-color) / 0.7),
+		1px 2px 1.7px -2.5px hsl(var(--shadow-color) / 0.52),
+		2.8px 5.6px 4.7px -3.7px hsl(var(--shadow-color) / 0.35),
+		6.3px 12.5px 10.5px -5px hsl(var(--shadow-color) / 0.17);
+	--shadow-elevation-high: 0.3px 0.5px 0.4px hsl(var(--shadow-color) / 0.81),
+		0.3px 0.6px 0.5px -0.6px hsl(var(--shadow-color) / 0.73),
+		0.7px 1.3px 1.1px -1.1px hsl(var(--shadow-color) / 0.65),
+		1.6px 3.3px 2.8px -1.7px hsl(var(--shadow-color) / 0.57),
+		3.5px 7px 5.9px -2.2px hsl(var(--shadow-color) / 0.49),
+		6.6px 13.3px 11.1px -2.8px hsl(var(--shadow-color) / 0.41),
+		11.3px 22.6px 19px -3.3px hsl(var(--shadow-color) / 0.33),
+		17.8px 35.6px 29.9px -3.9px hsl(var(--shadow-color) / 0.24),
+		26.4px 52.8px 44.3px -4.4px hsl(var(--shadow-color) / 0.16),
+		37.5px 75px 62.9px -5px hsl(var(--shadow-color) / 0.08);
+}
+
+$shadow: (
+	"low": (
+		0.7px 0.7px 0.7px hsl(var(--shadow-color) / 0.31),
+		1px 1px 1.1px -2.5px hsl(var(--shadow-color) / 0.21),
+		3.3px 3.3px 3.5px -5px hsl(var(--shadow-color) / 0.1),
+	),
+	"medium": (
+		0.7px 0.7px 0.7px hsl(var(--shadow-color) / 0.26),
+		0.9px 0.9px 1px -1.2px hsl(var(--shadow-color) / 0.21),
+		2.6px 2.6px 2.8px -2.5px hsl(var(--shadow-color) / 0.16),
+		7.3px 7.4px 7.8px -3.7px hsl(var(--shadow-color) / 0.11),
+		16.4px 16.6px 17.5px -5px hsl(var(--shadow-color) / 0.05),
+	),
+	"high": (
+		0.7px 0.7px 0.7px hsl(var(--shadow-color) / 0.24),
+		0.8px 0.8px 0.8px -0.6px hsl(var(--shadow-color) / 0.22),
+		1.7px 1.7px 1.8px -1.1px hsl(var(--shadow-color) / 0.2),
+		4.3px 4.3px 4.6px -1.7px hsl(var(--shadow-color) / 0.17),
+		9.2px 9.3px 9.8px -2.2px hsl(var(--shadow-color) / 0.15),
+		17.4px 17.6px 18.6px -2.8px hsl(var(--shadow-color) / 0.12),
+		29.6px 29.9px 31.6px -3.3px hsl(var(--shadow-color) / 0.1),
+		46.6px 47.1px 49.7px -3.9px hsl(var(--shadow-color) / 0.07),
+		69.3px 70px 73.9px -4.4px hsl(var(--shadow-color) / 0.05),
+		98.3px 99.3px 104.8px -5px hsl(var(--shadow-color) / 0.02),
+	),
+);
+
+$curve-radius: 100rem;
+
+$space: (
+	"-5": 0.0625rem,
+	"-4": 0.125rem,
+	"-3": 0.25rem,
+	"-2": 0.5rem,
+	"-1": 0.75rem,
+	"0": 1rem,
+	"1": 1.5rem,
+	"2": 2rem,
+	"3": 3rem,
+	"4": 4rem,
+	"5": 5rem,
+);

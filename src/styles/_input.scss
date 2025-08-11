@@ -1,0 +1,14 @@
+@import "./variables.scss";
+
+.input-container {
+	padding: map-get($space, "-1");
+	flex-direction: row;
+	gap: map-get($space, "-2");
+
+	box-shadow: map-get($shadow, "medium");
+
+	border-style: solid;
+	border-color: #333;
+	border-width: map-get($space, "-4");
+	border-radius: $curve-radius;
+}
