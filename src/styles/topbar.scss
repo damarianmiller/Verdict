@@ -17,8 +17,6 @@ header.topbar {
 	align-items: flex-start;
 	z-index: 1;
 	background-color: #eee;
-	top: 0;
-	bottom: auto;
 
 	box-shadow: var(--shadow-elevation-medium);
 	border-bottom-style: solid;
@@ -28,6 +26,7 @@ header.topbar {
 		width: 100%;
 
 		grid-area: header;
+		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
 		gap: map-get($space, "-1");

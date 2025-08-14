@@ -1,9 +1,17 @@
 'use client';
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import "../styles/main.scss";
 
 import Button from "../components/Button";
+/* Components */
+
+/* Styles */
+import "../styles/main.scss";
+import "../styles/view.scss";
+import "../styles/topbar.scss";
+import "../styles/bottombar.scss";
+
+
 
 
 function Topbar() {
@@ -13,20 +21,10 @@ function Topbar() {
     useEffect(() => {
         setNavOpen(false);
     }, [pathname]);
-    useEffect(() => {
-        if (navOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-        return () => {
-            document.body.style.overflow = '';
-        };
-    }, [navOpen]);
 
 
     return (
-        <header className="topbar" style={navOpen ? { bottom: 0 } : {}}>
+        <header className="topbar">
             <header>
                 <Button icon="bars" onClick={toggleNav} />
                 <section>
@@ -48,13 +46,38 @@ function Topbar() {
     );
 }
 
-const BottomBar = () => {
+
+type Action = { icon: string; label: string; onClick: () => void };
+function BottomBar() {
+    const pathname = usePathname();
+    // Example: customize actions for each route
+    let actions: Action[] = [];
+    if (pathname === "/") {
+        actions = [
+            { icon: "plus", label: "New Proposal", onClick: () => alert("New Proposal") },
+        ];
+    } else if (pathname.startsWith("/proposals")) {
+        actions = [
+            { icon: "filter", label: "Filter", onClick: () => alert("Filter Proposals") },
+            { icon: "sort", label: "Sort", onClick: () => alert("Sort Proposals") },
+        ];
+    } else if (pathname.startsWith("/vote")) {
+        actions = [
+            { icon: "check", label: "Submit Vote", onClick: () => alert("Submit Vote") },
+        ];
+    } else if (pathname.startsWith("/results")) {
+        actions = [
+            { icon: "download", label: "Export Results", onClick: () => alert("Export Results") },
+        ];
+    }
     return (
         <footer className="bottombar">
-
+            {actions.map((action, i) => (
+                <Button key={i} icon={action.icon} label={action.label} onClick={action.onClick} />
+            ))}
         </footer>
     );
-};
+}
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (

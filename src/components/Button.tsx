@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation';
 
 interface ButtonProps {
     className?: string;
-
     icon?: string;
     label?: string;
     link?: string;

@@ -63,34 +63,26 @@ const dummyProposals = [
 export default function ProposalsView() {
     return (
         <>
-            <div className="header">
-                <hgroup>
+            <header>
+                <div>
                     <i className="icon fa-solid fa-paper-plane"></i>
+                </div>
+                <hgroup>
                     <h1>Proposals</h1>
+                    <h2>Here you can view and manage proposals.</h2>
                 </hgroup>
-
-                <h2>Here you can view and manage proposals related to the Verdict App.</h2>
-
-            </div>
-
-
-            <div className="resultsTable">
-                <div className="header">
-                    <Input icon="search" type="search" placeholder="Search proposals..." />
-                    <Button icon="plus" label="New Proposal" className="newProposalButton" />
-                    <Button icon="filter" label="Filter" className="filterButton" />
-                </div>
-                <div className="content">
-                    {dummyProposals.map((proposal, index) => (
-                        <div key={index} className="card proposal-item">
-                            <h2>{proposal.title}</h2>
-                            <p>{proposal.comments} comments</p>
-                            <p>{proposal.votes} votes</p>
-                            <p>Status: {proposal.status}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            </header>
+            <article className="content">
+                <Input icon="search" type="search" placeholder="Search proposals..." />
+                {dummyProposals.map((proposal, index) => (
+                    <section key={index} className="card proposal-item">
+                        <h2>{proposal.title}</h2>
+                        <p>{proposal.comments} comments</p>
+                        <p>{proposal.votes} votes</p>
+                        <p>Status: {proposal.status}</p>
+                    </section>
+                ))}
+            </article>
         </>
     );
 }
